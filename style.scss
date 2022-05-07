@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+}
+
+.input {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 40%;
+    height: 30px;
+    min-width: 200px;
+    max-width: 500px;
+    margin-top: 40px;
+    padding: 20px 30px;
+    border-radius: 2px;
+    background: white;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    &__text {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        font-family: montserrat;
+        color: #2C3E50;
+        font-size: 13px;
+    }
+    &__text::placeholder {
+        text-transform: uppercase;
+        padding-left: 10px;
+    }
+    &__button {
+        width: 100px;
+        border: 0 none;
+	    border-radius: 1px;
+	    background: #27AE60;
+	    font-weight: bold;
+	    color: white;
+	    cursor: pointer;
+    }
+    &__text:focus {
+        outline: none;
+        border-color: #719ECE;
+        box-shadow: 0 0 2px #719ECE;
+    }
+    &__button:hover {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    }
+    &__tooltiptext {
+        position: absolute;
+        left: 20%;
+        bottom: 100%;
+        width: 120px;
+        z-index: 4;
+        visibility: hidden;
+        margin-left: -60px;
+        padding: 5px 0;
+        border-radius: 6px;
+        text-align: center;
+        color: #fff;
+        background-color: #555;
+        opacity: 0;
+        transition: opacity 0.3s;
+}
+    &__tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+}
